@@ -17,10 +17,32 @@ module.exports.diplayHomePage = (req, res, next) => {
     res.render('index', { title: 'Products' });
   }
 
-  module.exports,displaySerPage = (req, res, next) => {
+  module.exports.displaySerPage = (req, res, next) => {
     res.render('index', { title: 'Services' });
   }
 
+  
+
   module.exports.diplayFavThings = (req, res, next) => {
     res.render('index', { title: 'Favourites' });
+  }
+
+  module.exports.displayLoginPage = (req, res, next) => {
+    //res.render('index', { title: 'Services' });
+  }
+
+  module.exports.processLoginPage = (req, res, next) => {
+    //res.render('index', { title: 'Services' });
+  }
+
+  module.exports.displayregisterPage = (req, res, next) => {
+    //res.render('index', { title: 'Services' });
+  }
+
+  module.exports.processRegisterPage = (req, res, next) => {
+    //res.render('index', { title: 'Services' });
+  }
+
+  module.exports.performLogout = (req, res, next) => {
+    //res.render('index', { title: 'Services' });
   }
