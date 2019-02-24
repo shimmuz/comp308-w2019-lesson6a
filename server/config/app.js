@@ -47,7 +47,7 @@ app.use(express.static(path.join(__dirname, '../../node_modules')));
 app.use(session({
   secret:"SomeSecret",
   saveUninitialized:false,
-  resave=false,
+  resave : false,
 }));
 
 //initialize flash
@@ -64,11 +64,11 @@ let userModel = require('../models/user');
 let User = userModel.User;
 
 //implement a user authentication strategy
-passport.use(user.createStrategy());
+passport.use(User.createStrategy());
 
 //serialize and desrialize user information
 passport.serializeUser(User.serializeUser());
-passport.deserializeUser(USer.deserializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.use('/', indexRouter);
 app.use('/contact-list', contactRouter);
