@@ -55,7 +55,6 @@ module.exports.displayLoginPage = (req, res, next) => {
     res.render("auth/login", {
       title: "Login",
       messages: req.flash("loginMessage"),
-      //messages: "hello",
       displayName: req.user ? req.user.displayName : ""
     });
   } else {
@@ -65,7 +64,7 @@ module.exports.displayLoginPage = (req, res, next) => {
 
 module.exports.processLoginPage = (req,res,next)=>{
  passport.authenticate('local', 
-   (err,user,info)=> {
+   (err,user,info) => {
      //server error?
      if (err){
        return next(err);
@@ -75,7 +74,7 @@ module.exports.processLoginPage = (req,res,next)=>{
        req.flash("loginMessage","Authentication Error");
        return res.redirect('/login');
      }
-     req.logIn(user,(err) =>{
+     req.logIn(user,(err) => {
        //server error?
        if(err){
          return next(err);
@@ -85,8 +84,7 @@ module.exports.processLoginPage = (req,res,next)=>{
        });
      })(req,res,next);
    }
-  
-thomas
+
 
 module.exports.displayregisterPage = (req, res, next) => {
   if (!req.user) {
